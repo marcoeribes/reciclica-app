@@ -1,0 +1,16 @@
+ion-content {
+    --background: var(--ion-color-success);
+}
+
+ion-radio {
+    --border-radius: 4px;
+    --inner-border-radius: 4px;
+    border-color: #6815ec;
+  
+    --color: #ddd;
+    --color-checked: #6815ec;
+}
+
+ion-button {
+    margin: 10px;
+}
