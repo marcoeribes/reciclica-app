@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginPageForm } from './login.page.form';
 
@@ -24,6 +24,10 @@ export class LoginPage implements OnInit {
 
   register(){
     this.router.navigate(['register']);
+  }
+
+  getFormControl(name: string): FormControl {
+    return this.form.get(name) as FormControl;
   }
 
 }
