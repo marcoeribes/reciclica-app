@@ -15,7 +15,7 @@
             <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
           </ion-item>
           <app-error-message [field]="getFormControl('password')" error="required" message="Password is invalid"></app-error-message>
-          <ion-button color="dark" fill="clear" size="full">Forgot email/password</ion-button>
+          <ion-button color="dark" fill="clear" size="full" (click)="forgotEmailPassword()" [disabled]="!form.get('email')?.valid">Forgot email/password</ion-button>
           <ion-button color="success" size="full" (click)="login()" [disabled]="!form.valid">Login</ion-button>
           <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
         </ion-card-content>
