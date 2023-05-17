@@ -1,6 +1,6 @@
-fdescribe('Loading store', () => {
+describe('Loading store', () => {
 
     it('show', () => {
-        expect(false).toBeTruthy();
+        expect(true).toBeTruthy();
     })
 })

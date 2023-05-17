@@ -5,6 +5,9 @@ import { LoginPageForm } from './login.page.form';
 import { Store } from '@ngrx/store';
 import { show, hide } from 'src/store/loading/loading.actions';
 import { AppState } from 'src/store/AppState';
+import { login, recoverPassword } from 'src/store/login/login.actions';
+import { ToastController } from '@ionic/angular';
+import { LoginState } from 'src/store/login/loginState';
 
 @Component({
   selector: 'app-login',
@@ -15,14 +18,39 @@ export class LoginPage implements OnInit {
 
   form: FormGroup;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>, 
+    private toastController: ToastController) { }
 
   ngOnInit() {
     this.form = new LoginPageForm(this.formBuilder).createForm();
+
+    this.store.select('login').subscribe(loginState => {
+      this.onIsRecoveringPassword(loginState);
+      this.onRecoveredPassword(loginState);
+    })
+  }
+
+  private onIsRecoveringPassword(loginState: LoginState){
+    if (loginState.isRecoveringPassword){
+      this.store.dispatch(show());
+    }
+  }
+
+  private async onRecoveredPassword(loginState: LoginState){
+    if (loginState.isRecoveringPassword){
+      this.store.dispatch(hide());
+      const toaster = await this.toastController.create({
+        position: "bottom",
+        message: "Recovery email sent",
+        color: "primary"
+      });
+      toaster.present();
+    }
   }
 
   login(){
-    this.router.navigate(['home']);
+    this.store.dispatch(login());
+
   }
 
   register(){
@@ -34,11 +62,11 @@ export class LoginPage implements OnInit {
   }
 
   forgotEmailPassword() {
-    this.store.dispatch(show())
+    this.store.dispatch(recoverPassword());
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.store.dispatch(hide())
-    }, 3000)
+    }, 3000)*/
   }
 
 }
