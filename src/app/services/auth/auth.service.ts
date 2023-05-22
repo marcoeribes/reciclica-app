@@ -29,47 +29,19 @@ export class AuthService {
     let params = new HttpParams().set('email', email).set('password', password);
     let user$ = this.http.get<any>('http://localhost:5000/users', {params: params})
     return new Observable<User>(observer => {
-      setTimeout(() => {
-        let flag;
-        user$.subscribe(data => {flag =  data.length === 0});
-        if (flag){
+      user$.subscribe(reactor => {
+        let user = new User();
+        [user] = reactor;
+        if (user === undefined){
           observer.error({message: 'User not found'});
-          observer.next();
         } else {
-          let user = new User();
-          user$.subscribe(data => {
-            [user] = data;
-            console.log("destructured user", user);
-            observer.next(user);
-            observer.complete();
-          })
-        }
-      }, 3000)
-    });
-  }
-
-  getUsers(): Observable<User[]> {
-    let usersDB$ = this.http.get<User[]>(this.apiUrl);
-    console.log(usersDB$);
-    return usersDB$;
-  }
-
-  /*login(email: string, password: string): Observable<User> {
-    let params = new HttpParams().set('email', email).set('password', password);
-    let currentUser = this.http.get<User[]>('http://localhost:5000/users', {params: params});
-    return new Observable<User>(observer => {
-      setTimeout(() => {
-        if (email !== currentUser.email){
-          observer.error({message: 'User not found'});
-          observer.next();
-        } else {
-          const user = new User();
-          user.email = email;
           observer.next(user);
+          observer.complete()
         }
-        observer.complete();
-      }, 3000)
-    });
-  }*/
+      })
+    })
+  }
+
+
 
 }
