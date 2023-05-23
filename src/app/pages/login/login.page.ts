@@ -58,7 +58,6 @@ export class LoginPage implements OnInit, OnDestroy {
       const password = this.form.get('password')?.value;
       this.authService.login(email, password).subscribe(user => {
         this.store.dispatch(loginSuccess({user}));
-        console.log("user from login", user);
       }, error => {
         this.store.dispatch(loginFail({error}));
       });

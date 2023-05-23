@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LoadingComponent } from './components/loading/loading.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [AppComponent, LoadingComponent],
@@ -20,7 +21,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     StoreDevtoolsModule.instrument({maxAge: 25}),
     HttpClientModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

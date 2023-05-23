@@ -67,7 +67,7 @@ export class RegisterPage implements OnInit, OnDestroy {
  private onIsRegistered(registerState: RegisterState){
   if (registerState.isRegistered){
     this.form.reset();
-    this.router.navigate(['login']);
+    this.router.navigate(['home']);
   }
  }
 
