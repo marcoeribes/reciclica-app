@@ -3,3 +3,17 @@ ion-list {
         font-weight: bold;
     }
 }
+
+ion-toolbar {
+    //--border-style: none;
+    --box-shadow: none;
+    --min-height: 30px;
+}
+
+ion-content {
+    --background: var(--ion-color-primary);
+}
+
+ion-item {
+    --border-style: none;
+}

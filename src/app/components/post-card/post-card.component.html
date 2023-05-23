@@ -1,0 +1,47 @@
+<ion-card>
+
+  <ion-card-content>
+    <ion-header>
+      <div class="header">
+        <ion-avatar slot="start">
+          <img src="https://static.vecteezy.com/system/resources/previews/002/534/006/original/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg">
+        </ion-avatar>
+        <ion-label>{{ name }}</ion-label>
+        <ion-text>{{ dateCreated }}</ion-text>
+      </div>
+    </ion-header>
+    <ion-item lines="none">
+      <ion-label>
+        <p>
+          {{ postContent }}
+        </p>
+      </ion-label>
+    </ion-item>
+
+  </ion-card-content>
+  <ion-footer>
+    <div class="footer">
+      <div class="toggled" (click)="toggleComment()">
+        <ion-icon 
+          size="large"
+          [name]="clickedOnComment ? 'chatbubble' : 'chatbubble-outline'"
+          [color]="clickedOnComment ? 'primary' : 'dark'">
+        </ion-icon>
+      </div>
+      <div class="toggled" (click)="toggleLike()">
+        <ion-icon 
+          size="large"
+          [name]="isLiked ? 'heart' : 'heart-outline'" 
+          [color]="isLiked ? 'danger' : 'dark'" >
+        </ion-icon>
+      </div>
+      <div class="toggled" (click)="toggleStar()">
+        <ion-icon 
+          size="large"
+          [name]="isStarred ? 'star' : 'star-outline'" 
+          [color]="isStarred ? 'warning' : 'dark'" >        
+        </ion-icon>
+      </div>
+    </div>
+  </ion-footer>
+</ion-card>

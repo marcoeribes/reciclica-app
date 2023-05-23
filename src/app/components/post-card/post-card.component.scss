@@ -1,0 +1,36 @@
+ion-card {
+    ion-card-subtitle {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    p {
+        white-space: normal; 
+    }
+}
+
+ion-avatar{
+    height: 40px;
+    width: 40px;
+}
+
+.header {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.toggled{
+    transition: transform 0.3s ease-in-out;
+}
+.toggled:hover {
+    transform: scale(1.2);
+}

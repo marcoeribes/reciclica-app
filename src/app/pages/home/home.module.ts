@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
-import { PickupCallCardModule } from 'src/app/components/pickup-call-card/pickup-call-card.module';
+import { PostCardModule } from 'src/app/components/post-card/post-card.module';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { PickupCallCardModule } from 'src/app/components/pickup-call-card/pickup
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    PickupCallCardModule
+    PostCardModule
   ],
   declarations: [
     HomePage  
