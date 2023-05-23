@@ -112,8 +112,6 @@ export class RegisterPage implements OnInit, OnDestroy {
     this.registerForm.getForm().markAllAsTouched();
     console.log("form", this.form);
     console.log("user", this.createUser())
-    
-
     if (this.registerForm.getForm().valid){
       this.store.dispatch(register());
     }
