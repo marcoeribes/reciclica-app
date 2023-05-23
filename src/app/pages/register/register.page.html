@@ -19,9 +19,7 @@
             <ion-input label="Name" labelPlacement="floating" type="text" formControlName="name"></ion-input>
           </ion-item>
           <app-error-message [field]="getFormControl('name')" error="required" message="Name is required"></app-error-message>
-          <app-error-message [field]="getFormControl('name')" error="noSpecialCharacters" message="Special characters are not allowed"></app-error-message>
-          <app-error-message [field]="getFormControl('name')" error="noLastName" message="Last name is required"></app-error-message>
-          
+          <app-error-message [field]="getFormControl('name')" error="pattern" message="No special characters"></app-error-message>          
           <ion-item>
             <ion-input label="Email" labelPlacement="floating" type="email" formControlName="email"></ion-input>
           </ion-item>
@@ -35,7 +33,8 @@
           <ion-item>
             <ion-input label="Confirm password" labelPlacement="floating" type="password" formControlName="confirmPassword"></ion-input>
           </ion-item>
-          <app-error-message [field]="getFormControl('confirmPassword')" error="doesNotMatch" message="Passwords do not match"></app-error-message>
+          <app-error-message id="confNoMatch" [field]="getFormControl('confirmPassword')" error="doesNotMatch" message="Passwords do not match"></app-error-message>
+          <app-error-message id="confReq" [field]="getFormControl('confirmPassword')" error="required" message="Password confirmation is required"></app-error-message>
         </ion-card-content>
       </ion-card>
       <ion-button color="light" size="full" (click)="register()">Register</ion-button>
