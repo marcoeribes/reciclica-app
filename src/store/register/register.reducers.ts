@@ -16,6 +16,7 @@ const reducer = createReducer(initialState,
     on(registerSuccess, state => {
         return {
             ...state,
+            error: null,
             isRegistered: true,
             isRegistering: false
         }

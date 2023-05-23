@@ -26,7 +26,6 @@ export class RegisterPageForm {
         //form.controls['name']?.addValidators([firstAndLastName(form)])
         form.controls['confirmPassword']?.addValidators([matchPasswords(form)]);
         //form.get('name')?.setValidators(noSpecialCharactersAllowed(form));
-        console.log('here');
 
         return form;
     }
@@ -40,7 +39,6 @@ export class RegisterPageForm {
 function matchPasswords(form: FormGroup) : ValidatorFn {
     const password = form.get('password');
     const confirmPassword = form.get('confirmPassword');
-    console.log("confpass", confirmPassword)
     const validatorFn = () => {
         return confirmPassword?.value === password?.value  ? null : {doesNotMatch: true}
     }

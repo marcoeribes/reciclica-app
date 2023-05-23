@@ -56,40 +56,19 @@ export class RegisterPage implements OnInit, OnDestroy {
 
  private onIsRegistering(registerState: RegisterState){
   if (registerState.isRegistering){
-    this.store.dispatch(show());
-   } else {
-    this.store.dispatch(hide());
-   }
-  /*console.log(this.form);
-  console.log("name",this.form.get('name')?.value)
-  let user = new User();
-  //[user.name, user.email, user.password] = [name, email, password];
-  this.authService.register(user).subscribe(observer => {
-    this.store.dispatch(registerSuccess());
-    console.log("new account", observer);
-  }, error => {
-    console.log("error", error);
-    this.store.dispatch(registerFail({error}));
-  });*/
+    this.authService.register(this.createUser()).subscribe(() => {
+      this.store.dispatch(registerSuccess());
+    }, error => {
+      this.store.dispatch(registerFail({error}));
+    });
+  }
  }
 
  private onIsRegistered(registerState: RegisterState){
-  /*if (registerState.isRegistering){
-    //this.newUser.id = 5;
-    const user = new User();
-    const name = this.form.get('name')?.value;
-    const email = this.form.get('email')?.value;
-    const password = this.form.get('password')?.value;
-    [user.name, user.email, user.password] = [name, email, password]
-    console.log(user);
-    this.authService.register(user).subscribe(observer => {
-      this.store.dispatch(registerSuccess());
-      console.log("new account", observer);
-    }, error => {
-      console.log("error", error);
-      this.store.dispatch(registerFail({error}));
-    });
-  }*/
+  if (registerState.isRegistered){
+    this.form.reset();
+    this.router.navigate(['login']);
+  }
  }
 
  private async onError(registerState: RegisterState){
