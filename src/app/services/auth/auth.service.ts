@@ -25,15 +25,23 @@ export class AuthService {
     })
   }
 
+  register(apiUrl: string, name: string, email: string, password: string){
+    let params = new HttpParams().set('name', name).set('email', email).set('password', password);
+    let user = new User();
+    this.http.post<any>(apiUrl, {params: params}).subscribe(observer => {
+
+    })
+  }
+
   login(email: string, password: string): Observable<User> {
     let params = new HttpParams().set('email', email).set('password', password);
-    let user$ = this.http.get<any>('http://localhost:5000/users', {params: params})
+    let user$ = this.http.get<any>(this.apiUrl, {params: params})
     return new Observable<User>(observer => {
       user$.subscribe(reactor => {
         let user = new User();
         [user] = reactor;
         if (user === undefined){
-          observer.error({message: 'User not found'});
+          observer.error({message: 'Invalid email or password'});
         } else {
           observer.next(user);
           observer.complete()

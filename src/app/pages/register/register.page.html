@@ -3,55 +3,42 @@
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title style="title" >Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="registerForm.getForm()">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>What do you want to do with the recyclable waste?</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-radio-group value="strawberries">
+  <div class="flex-center">
+    <form [formGroup]="registerForm.getForm()">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Contact</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
           <ion-item>
-            <ion-radio value="CLIENT" justify="start" labelPlacement="end">I want to BUY it</ion-radio>
+            <ion-input label="Name" labelPlacement="floating" type="text" formControlName="name"></ion-input>
           </ion-item>
+          <app-error-message [field]="getFormControl('name')" error="required" message="Name is required"></app-error-message>
+          <app-error-message [field]="getFormControl('name')" error="noSpecialCharacters" message="Special characters are not allowed"></app-error-message>
+          <app-error-message [field]="getFormControl('name')" error="noLastName" message="Last name is required"></app-error-message>
+          
           <ion-item>
-            <ion-radio value="SELLER" justify="start" labelPlacement="end">I want to SELL it</ion-radio>
+            <ion-input label="Email" labelPlacement="floating" type="email" formControlName="email"></ion-input>
           </ion-item>
-        </ion-radio-group>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Contact</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-input label="Name" labelPlacement="floating" type="text" formControlName="name"></ion-input>
-        </ion-item>
-        <app-error-message [field]="getFormControl('name')" error="required" message="Name is required"></app-error-message>
-        <app-error-message [field]="getFormControl('name')" error="noSpecialCharacters" message="Special characters are not allowed"></app-error-message>
-        <app-error-message [field]="getFormControl('name')" error="noLastName" message="Last name is required"></app-error-message>
-        
-        <ion-item>
-          <ion-input label="Email" labelPlacement="floating" type="email" formControlName="email"></ion-input>
-        </ion-item>
-        <app-error-message [field]="getFormControl('email')" error="required" message="Email is required"></app-error-message>
-        <app-error-message [field]="getFormControl('email')" error="email" message="Email is invalid"></app-error-message>
-        <ion-item>
-          <ion-input label="Password" labelPlacement="floating" type="password" [counter]="true" formControlName="password"></ion-input>
-        </ion-item>
-        <app-error-message [field]="getFormControl('password')" error="required" message="Password is required"></app-error-message>
-        <app-error-message [field]="getFormControl('password')" error="minlength" message="Must be at least 8 characters"></app-error-message>
-        <ion-item>
-          <ion-input label="Confirm password" labelPlacement="floating" type="password" formControlName="confirmPassword"></ion-input>
-        </ion-item>
-        <app-error-message [field]="getFormControl('confirmPassword')" error="doesNotMatch" message="Passwords do not match"></app-error-message>
-      </ion-card-content>
-    </ion-card>
-    <ion-button color="light" size="full" (click)="register()">Register</ion-button>
-  </form>
+          <app-error-message [field]="getFormControl('email')" error="required" message="Email is required"></app-error-message>
+          <app-error-message [field]="getFormControl('email')" error="email" message="Email is invalid"></app-error-message>
+          <ion-item>
+            <ion-input label="Password" labelPlacement="floating" type="password" [counter]="true" formControlName="password"></ion-input>
+          </ion-item>
+          <app-error-message [field]="getFormControl('password')" error="required" message="Password is required"></app-error-message>
+          <app-error-message [field]="getFormControl('password')" error="minlength" message="Must be at least 8 characters"></app-error-message>
+          <ion-item>
+            <ion-input label="Confirm password" labelPlacement="floating" type="password" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+          <app-error-message [field]="getFormControl('confirmPassword')" error="doesNotMatch" message="Passwords do not match"></app-error-message>
+        </ion-card-content>
+      </ion-card>
+      <ion-button color="light" size="full" (click)="register()">Register</ion-button>
+    </form>
+  </div>
 </ion-content>
