@@ -8,8 +8,6 @@ export const AppInitialState: AppState = {
         error: null, 
         isLoggedIn: false,
         isLoggingIn: false,
-        recoveredPassword: false,
-        isRecoveringPassword: false,
     },
     register: {
         error: null,

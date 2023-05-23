@@ -13,23 +13,19 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  recoverEmailPassword(email: string) : Observable<void> {
+  register(user: User): Observable<void>{
+    console.log("user", user);
     return new Observable<void>(observer => {
       setTimeout(() => {
-        if (email == "error@email.com"){
-          observer.error({message: "Email not found"});
+        if (user.email == "error@email"){
+          observer.error({message: "email already registered"});
+        } else {
+          observer.next();
+          observer.complete();
         }
-        observer.next();
-        observer.complete();
-      }, 3000);
-    })
-  }
+        console.log("user", user);
 
-  register(apiUrl: string, name: string, email: string, password: string){
-    let params = new HttpParams().set('name', name).set('email', email).set('password', password);
-    let user = new User();
-    this.http.post<any>(apiUrl, {params: params}).subscribe(observer => {
-
+      }, 3000)
     })
   }
 

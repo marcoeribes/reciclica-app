@@ -8,7 +8,7 @@ export class RegisterPageForm {
 
     constructor(formBuilder: FormBuilder){
         this.formBuilder = formBuilder;
-        this.form = this.createForm();
+        this.form = this.createForm(); 
     }
 
     createForm() : FormGroup {
