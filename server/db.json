@@ -17,82 +17,13 @@
       "password": "testtest"
     },
     {
-      "id": 1684822247561,
-      "name": "john",
-      "email": "johndoe@email",
-      "password": "emailemail"
-    },
-    {
-      "id": 1684822570740,
-      "name": "newUser",
-      "email": "newUser@email",
-      "password": "test1234"
-    },
-    {
-      "id": 1684822655529,
-      "name": "newUserII",
-      "email": "newUserII@a",
-      "password": "test1234"
-    },
-    {
-      "id": 1684822752684,
-      "name": "newUserIII",
-      "email": "newUserIII@a",
-      "password": "test1234"
-    },
-    {
-      "id": 1684822872300,
-      "name": "newUserIV",
-      "email": "IV@a",
-      "password": "test1234"
-    },
-    {
-      "id": 1684823280390,
-      "name": "userV",
-      "email": "V@a",
-      "password": "test1234"
-    },
-    {
-      "id": 1684824291430,
-      "name": "userVI",
-      "email": "userVI@a",
-      "password": "test1234"
-    },
-    {
-      "id": 1684824635757,
-      "name": "VII",
-      "email": "VII@a",
-      "password": "viiviivii"
-    },
-    {
-      "id": 1684859274333,
-      "name": "johnny",
-      "email": "test@test123",
-      "password": "testtest"
-    },
-    {
-      "id": 1684859515532,
-      "name": "VIII",
-      "email": "VIII@a",
-      "password": "asdfasdf"
-    },
-    {
-      "id": 1684860416401,
-      "name": "asdfasdf",
-      "email": "asdfasdf@asd",
-      "password": "asdfasdf"
-    },
-    {
-      "id": 1684860899998,
-      "name": "timmy",
-      "email": "timmy@email",
-      "password": "123123123"
-    },
-    {
       "id": 1684861005293,
       "name": "timmytwo",
       "email": "timmytwo@email",
       "password": "123123123"
     }
+  ], 
+  "posts": [
+    
   ]
 }

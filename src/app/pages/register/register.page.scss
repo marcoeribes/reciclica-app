@@ -1,21 +1,13 @@
 .title{
-    font-size: 40px;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ion-content {
-    --background: var(--ion-color-success);
+    --background: var(--ion-color-primary);
     vertical-align: "middle";
 }
 
-ion-radio {
-    --border-radius: 4px;
-    --inner-border-radius: 4px;
-    border-color: #6815ec;
-  
-    --color: #ddd;
-    --color-checked: #6815ec;
-}
-
 ion-button {
-    margin: 10px;
+    margin: 25px;
 }

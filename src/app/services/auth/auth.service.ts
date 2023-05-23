@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, mapTo, of, switchMap } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { User } from 'src/app/model/user/User';
 
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 export class AuthService {
   private apiUrl = 'http://localhost:5000/users';
   users$: Observable<User[]> = this.allUsers();
+  public currentUser: User;
 
   constructor(private http:HttpClient) { }
 
@@ -58,6 +59,8 @@ export class AuthService {
           observer.error({message: 'Invalid email or password'});
         } else {
           observer.next(user);
+          this.currentUser = user;
+          console.log(this.currentUser);
           observer.complete()
         }
       })
@@ -68,5 +71,8 @@ export class AuthService {
     return this.http.get<any>(this.apiUrl);
   }
 
+  getCurrentUser(): User {
+    return this.currentUser;
+  }
 
 }

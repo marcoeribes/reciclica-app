@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
@@ -11,8 +11,8 @@
   <div class="flex-center">
     <form [formGroup]="registerForm.getForm()">
       <ion-card>
-        <ion-card-header>
-          <ion-card-title>Contact</ion-card-title>
+        <ion-card-header style="align-items:center">
+          <ion-card-title>Join Chirper</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
@@ -36,8 +36,9 @@
           <app-error-message id="confNoMatch" [field]="getFormControl('confirmPassword')" error="doesNotMatch" message="Passwords do not match"></app-error-message>
           <app-error-message id="confReq" [field]="getFormControl('confirmPassword')" error="required" message="Password confirmation is required"></app-error-message>
         </ion-card-content>
+        <ion-button color="primary" size="block" fill="solid" (click)="register()">Register</ion-button>
       </ion-card>
-      <ion-button color="light" size="full" (click)="register()">Register</ion-button>
+
     </form>
   </div>
 </ion-content>

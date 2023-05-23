@@ -32,7 +32,11 @@ const routes: Routes = [
   {
     path: 'loader',
     loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
+  },  {
+    path: 'posts',
+    loadChildren: () => import('./pages/posts/posts.module').then( m => m.PostsPageModule)
   }
+
 ];
 
 @NgModule({

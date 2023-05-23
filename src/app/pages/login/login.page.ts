@@ -88,6 +88,7 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   register(){
+    this.form.reset();
     this.router.navigate(['register']);
   }
 
