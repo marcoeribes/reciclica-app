@@ -10,6 +10,8 @@ import { ToastController } from '@ionic/angular';
 import { LoginState } from 'src/store/login/loginState';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Subscription } from 'rxjs';
+import { UserState } from 'src/store/user/UserState';
+import { userLogin } from 'src/store/user/user.actions';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +22,7 @@ export class LoginPage implements OnInit, OnDestroy {
 
   form: FormGroup;
   loginStateSubscription: Subscription;
+  userStateSubscription: Subscription;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>, 
     private toastController: ToastController, private authService: AuthService) { }
@@ -35,6 +38,10 @@ export class LoginPage implements OnInit, OnDestroy {
       
       this.onError(loginState);
       this.toggleLoading(loginState);
+    })
+
+    this.userStateSubscription = this.store.select('userState').subscribe(userState => {
+      //this.onIsLoggedIn(userState);
     })
   }
 
@@ -58,6 +65,8 @@ export class LoginPage implements OnInit, OnDestroy {
       const password = this.form.get('password')?.value;
       this.authService.login(email, password).subscribe(user => {
         this.store.dispatch(loginSuccess({user}));
+        this.store.dispatch(userLogin({user}));
+        console.log("user logged in");
       }, error => {
         this.store.dispatch(loginFail({error}));
       });
