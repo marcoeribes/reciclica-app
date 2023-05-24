@@ -1,34 +1,33 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Reciclica</ion-title>
+    <ion-title>Welcome back {{ currentUser.name }}</ion-title>
+    <ion-avatar slot="start">
+      <img src="https://static.vecteezy.com/system/resources/previews/002/534/006/original/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg">
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list color="success">
-    <ion-item color="success">
-      <ion-avatar slot="start">
-        <img src="https://www.whitehouse.gov/wp-content/uploads/2021/01/42_bill_clinton.jpg">
-      </ion-avatar>
+<ion-content >
+  <ion-list color="primary">
+    <ion-item color="primary">
+
       <ion-label>
-        <h1>Bill Clinton</h1>
-        <p>Gathered: <span class="money">$15.00</span></p>
+        <h1></h1>
       </ion-label>
     </ion-item>
   </ion-list>
-  <app-pickup-call-card
-    status="hold" 
-    updateAt="25/04/2021 16:29" 
-    createdAt="24/04/2021" 
-    notes="we have two bags that are full, one with plastic and the other with glasses">
+  <app-post-card
+    *ngFor="let post of posts"
+    [name]="currentUser.name"
+    [dateCreated]="post.dateCreated"
+    [content]="post.content">
     <ion-card-header header>
       <ion-card-subtitle>Last pickup call</ion-card-subtitle>
     </ion-card-header>
-    <ion-button color="success" fill="clear" size="full" (click)="goToPickupCalls()" footer>See all...</ion-button>
-  </app-pickup-call-card>
+  </app-post-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success" (click)="newPickupCall()">
       <ion-icon name="add"></ion-icon>

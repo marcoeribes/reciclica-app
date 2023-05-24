@@ -27,5 +27,5 @@ export class PostCardComponent implements OnInit {
   ngOnInit() {}
     @Input() name: string;
     @Input() dateCreated: string;
-    @Input() postContent: string;
+    @Input() content: string;
 }

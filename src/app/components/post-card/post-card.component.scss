@@ -1,3 +1,7 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 ion-card {
     ion-card-subtitle {
         text-transform: uppercase;
@@ -8,15 +12,31 @@ ion-card {
     }
 }
 
+ion-icon {
+    font-size: 26px;
+}
+
 ion-avatar{
-    height: 40px;
-    width: 40px;
+    height: 32px;
+    width: 32px;
+}
+
+ion-label{
+    font-size: 20px;
+}
+
+ion-text{
+    font-size: 17px;
+    p {
+        font-size: 14px;
+    }
 }
 
 .header {
+    margin: 5px 20px 10px; 
     display: flex; 
     flex-direction: row; 
-    justify-content: space-around; 
+    justify-content: space-between; 
     align-items: center;
 }
 
