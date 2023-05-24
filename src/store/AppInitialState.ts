@@ -14,7 +14,7 @@ export const AppInitialState: AppState = {
         isRegistered: false,
         isRegistering: false
     },
-    userState: {
-        user: null
+    user: {
+        userInfo: null
     }
 } 

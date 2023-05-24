@@ -39,10 +39,6 @@ export class LoginPage implements OnInit, OnDestroy {
       this.onError(loginState);
       this.toggleLoading(loginState);
     })
-
-    this.userStateSubscription = this.store.select('userState').subscribe(userState => {
-      //this.onIsLoggedIn(userState);
-    })
   }
 
   ngOnDestroy() {

@@ -12,12 +12,9 @@
   <app-create-post openModal="open-modal"></app-create-post>
 
   <ion-item color="secondary">
-    <ion-label>
-      <h1>Welcome back {{ user.name }}</h1>
-    </ion-label>
     <ion-label  *ngIf="posts.length === 0" class="no-posts-found">
       <h1>No posts found :/</h1><br>
-      <h2>Create your first post</h2>
+      <h2>Hi {{ user.name }}, create your first post!</h2>
     </ion-label>
   </ion-item>
 

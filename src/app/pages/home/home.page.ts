@@ -17,7 +17,7 @@ import { UserState } from 'src/store/user/UserState';
 })
 export class HomePage implements OnInit {
 
-  //user: User;
+  user: User;
   /*user: User = {
     "id": 1684890054248,
     "name": "BillyBob",

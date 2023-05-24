@@ -3,19 +3,19 @@ import { userLogin, userLogout } from './user.actions';
 import { UserState } from './UserState';
 import { AppInitialState } from "../AppInitialState";
 
-const userState: UserState = AppInitialState.userState;
+const userState: UserState = AppInitialState.user;
 
 const reducer = createReducer(userState,
     on(userLogin, (state, { user }) => {
         return {
             ...state,
-            user: user,
+            userInfo: user,
         }
     }),
     on(userLogout, state => {
         return {
             ...state,
-            user: null,
+            userInfo: null,
         }
     }),
     )

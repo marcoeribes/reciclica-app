@@ -7,5 +7,5 @@ export interface AppState {
     loading: LoadingState;
     login: LoginState;
     register: RegisterState;
-    userState: UserState;
+    user: UserState;
 }

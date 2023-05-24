@@ -18,30 +18,42 @@
     },
     {
       "id": 1684861005293,
-      "name": "timmytwo",
+      "name": "Timmy",
       "email": "timmytwo@email",
       "password": "123123123"
     },
     {
       "id": 1684890054248,
-      "name": "BillyBob",
+      "name": "Billy",
       "email": "billybob@email.com",
       "password": "test1234"
+    },
+    {
+      "id": 1684952906439,
+      "name": "tester",
+      "email": "tester1@email",
+      "password": "123123123"
+    },
+    {
+      "id": 1684952944968,
+      "name": "tester",
+      "email": "test2@email",
+      "password": "123123123"
     }
   ],
   "posts": [
     {
       "id": 300,
-      "authorId": 1684890054248,
-      "dateCreated": "01/01/1000",
-      "content": "This is my first post ever!",
+      "authorId": 1684861005293,
+      "dateCreated": "05/24/2023",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.",
       "comments": []
     },
     {
-      "id": 301,
-      "authorId": 1684890054248,
-      "dateCreated": "02/02/2000",
-      "content": "My second post ever!",
+      "id": 300,
+      "authorId": 1684861005293,
+      "dateCreated": "05/22/2023",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.",
       "comments": []
     },
     {
@@ -61,15 +73,29 @@
     {
       "id": 300,
       "authorId": 1684890054248,
-      "dateCreated": "01/01/1000",
-      "content": "This is my first post ever!",
+      "dateCreated": "03/03/3000",
+      "content": "This is my third post ever!",
       "comments": []
     },
     {
       "id": 301,
       "authorId": 1684890054248,
-      "dateCreated": "02/02/2000",
-      "content": "My second post ever!",
+      "dateCreated": "04/04/4000",
+      "content": "My fourth post ever!",
+      "comments": []
+    },
+    {
+      "id": 300,
+      "authorId": 1684890054248,
+      "dateCreated": "05/05/5000",
+      "content": "My fifth post! ",
+      "comments": []
+    },
+    {
+      "id": 301,
+      "authorId": 1684890054248,
+      "dateCreated": "06/06/6000",
+      "content": "My sixth post !",
       "comments": []
     }
   ]
