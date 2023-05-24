@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { PostCardModule } from 'src/app/components/post-card/post-card.module';
+import { CreatePostModule } from 'src/app/components/create-post/create-post.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { PostCardModule } from 'src/app/components/post-card/post-card.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    PostCardModule
+    PostCardModule,
+    CreatePostModule
   ],
   declarations: [
     HomePage  

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActionSheetController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { Post } from 'src/app/model/post/Post';
 import { User } from 'src/app/model/user/User';
@@ -26,6 +27,7 @@ export class HomePage implements OnInit {
     "password": "test1234"
   };
   posts: Post[] = [];
+
 
   /*[
     {
@@ -61,20 +63,4 @@ export class HomePage implements OnInit {
     console.log("posts2", this.posts)
 
   }
-
-
-  goToPickupCalls(){
-    this.router.navigate(['pickup-calls']);
-  }
-
-  newPickupCall(){
-    this.router.navigate(['pickup-call']);
-  }
-
-
-
-  
-  
-
-
 }
