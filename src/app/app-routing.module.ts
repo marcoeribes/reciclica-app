@@ -22,10 +22,6 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: 'pickup-call',
-    loadChildren: () => import('./pages/pickup-call/pickup-call.module').then( m => m.PickupCallPageModule)
-  },
-  {
     path: 'loader',
     loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
   },
