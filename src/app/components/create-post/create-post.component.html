@@ -3,20 +3,27 @@
     <ion-header>
       <ion-toolbar color="light">
         <ion-buttons slot="start">
-          <ion-icon name="close-outline" size="large" (click)="modal.dismiss()"></ion-icon>
+          <ion-icon name="close-outline" size="large" (click)="exitModal()" id="exit"></ion-icon>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding" color="light">
-      <ion-avatar>
-        <img src="https://static.vecteezy.com/system/resources/previews/002/534/006/original/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg">
-      </ion-avatar>
-      <ion-textarea color="warning" fill="solid" placeholder="What is happening!?" ></ion-textarea>
+      <ion-textarea 
+        color="warning" 
+        fill="solid"
+        placeholder="What is happening!?" 
+        rows="9"
+        [counter]="false"
+        maxlength="140"
+        [counterFormatter]="customCounterFormatter"
+        [(ngModel)]="content"
+        >
+      </ion-textarea>
     </ion-content>
     <ion-footer>
       <ion-toolbar color="light">
         <ion-buttons slot="end">
-          <ion-button fill="solid" shape="round" color="primary">Post</ion-button>
+          <ion-button size="large" fill="solid" shape="round" color="primary" [disabled]="isPostEmpty(content)" (click)="createPost()">Post</ion-button>
         </ion-buttons>
     </ion-toolbar>
     </ion-footer>

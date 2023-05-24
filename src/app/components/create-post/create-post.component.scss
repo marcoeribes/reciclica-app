@@ -1,20 +1,44 @@
 ion-modal {
-    --height: 50%;
+    --height: 40%;
     --width: 95%;
     --border-radius: 16px;
     --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-  }
+}
   
-  ion-modal::part(backdrop) {
-    background: rgb(0, 0, 0);
-    opacity: 1;
-  }
-  
-  ion-modal ion-toolbar {
-    --color: white;
+ion-modal::part(backdrop) {
+background: rgb(0, 0, 0);
+opacity: 1;
+}
+
+ion-toolbar {
+    --border-style: none;
+    --box-shadow: none;
+    --min-height: 55px;
+}
+
+ion-content {
+    --overflow: hidden;
+}
+
+ion-content::-webkit-scrollbar {
+    display: none;
   }
 
-  ion-action-sheet {
-    --backdrop-opacity: 0.1; // Set this to the desired opacity
-  }
+ion-modal ion-toolbar {
+--color: white;
+}
+
+ion-action-sheet {
+--backdrop-opacity: 0.1; // Set this to the desired opacity
+}
+
+ion-textarea {
+    font-size: 20px;
+}
+
+ion-button{
+    width: 70px;
+    height: 40px;
+    margin-bottom: 10px;
+}
