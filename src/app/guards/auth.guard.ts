@@ -13,16 +13,20 @@ export class AuthGuard implements CanLoad {
 
   constructor(private store: Store<AppState>, private router: Router){}
 
-  canLoad() : Observable<boolean> {
+  /*canLoad() : Observable<boolean> {
     return this.store.select('login').pipe(
       switchMap(loginState => {
         if (loginState.isLoggedIn){
           return of(true)
         }
         this.router.navigateByUrl('login');
-        return of(false);
+        return of(true);
       })
     )
+  }*/
+
+  canLoad() : Observable<boolean> {
+    return of(true);
   }
   /*canLoad(
     route: Route,

@@ -13,13 +13,21 @@ import { PostService } from 'src/app/services/database-management/post.service';
 })
 export class HomePage implements OnInit {
 
-  currentUser: User = {
+  /*user: User = {
     id: 5,
     name: "John",
     email: "john@email.com",
     password: "password"
-  }//
-  posts: Post[] = [
+  }*/
+  user: User =     {
+    "id": 1684890054248,
+    "name": "BillyBob",
+    "email": "billybob@email.com",
+    "password": "test1234"
+  };
+  posts: Post[] = [];
+
+  /*[
     {
       "id": 300,
       "authorId": 5,
@@ -34,24 +42,24 @@ export class HomePage implements OnInit {
       "content": "This is my second post ever!",
       "comments": [null]
     },
-  ];
-  post: Post = {
-    "id": 300,
-    "authorId": 5,
-    "dateCreated": "01/01/1000",
-    "content": "This is my first post ever!",
-    "comments": [null]
-  }
+  ]*/
   constructor(private router: Router, private authService: AuthService, private postService: PostService) { }
 
   ngOnInit() {
-    console.log("current user", this.currentUser);
     //currentUser = this.authService.getCurrentUser();
     /*this.postService.getPosts(this.currentUser.id).subscribe(observer => {
       console.log("observer", observer[0]);
       //this.post = observer[0];
     });*/
-    console.log("post", this.post)
+    //this.user = this.authService.getCurrentUser()
+    console.log("current user", this.user);
+    console.log("posts", this.posts)
+
+    this.postService.getPosts(this.user.id).subscribe(posts => {
+      this.posts = posts;
+    })
+    console.log("posts2", this.posts)
+
   }
 
 

@@ -1,27 +1,25 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Welcome back {{ currentUser.name }}</ion-title>
-    <ion-avatar slot="start">
-      <img src="https://static.vecteezy.com/system/resources/previews/002/534/006/original/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg">
-    </ion-avatar>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
-  <ion-list color="primary">
-    <ion-item color="primary">
-
+    <ion-item color="secondary">
       <ion-label>
-        <h1></h1>
+        <h1>Welcome back {{ user.name }}</h1>
+      </ion-label>
+      <ion-label  *ngIf="posts.length === 0" class="no-posts-found">
+        <h1>No posts found :/</h1><br>
+        <h2>Create your first post</h2>
       </ion-label>
     </ion-item>
-  </ion-list>
   <app-post-card
     *ngFor="let post of posts"
-    [name]="currentUser.name"
+    [name]="user.name"
     [dateCreated]="post.dateCreated"
     [content]="post.content">
     <ion-card-header header>
@@ -29,7 +27,7 @@
     </ion-card-header>
   </app-post-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success" (click)="newPickupCall()">
+    <ion-fab-button color="primary" (click)="newPickupCall()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

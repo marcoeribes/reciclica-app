@@ -1,3 +1,7 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 ion-list {
     .money {
         font-weight: bold;
@@ -8,13 +12,24 @@ ion-toolbar {
     --border-style: none;
     --box-shadow: none;
     --min-height: 30px;
-
+    ion-title {
+        font-size: 20px;
+    }
 }
 
 ion-content {
-    --background: var(--ion-color-primary);
+    --background: var(--ion-color-secondary);
 }
 
 ion-item {
     --border-style: none;
+}
+
+.no-posts-found {
+    text-align: center;
+    margin-top: 50%;
+}
+
+h1 {
+    text-align: center;
 }

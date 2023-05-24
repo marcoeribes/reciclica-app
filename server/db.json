@@ -21,9 +21,56 @@
       "name": "timmytwo",
       "email": "timmytwo@email",
       "password": "123123123"
+    },
+    {
+      "id": 1684890054248,
+      "name": "BillyBob",
+      "email": "billybob@email.com",
+      "password": "test1234"
     }
-  ], 
+  ],
   "posts": [
-    
+    {
+      "id": 300,
+      "authorId": 1684890054248,
+      "dateCreated": "01/01/1000",
+      "content": "This is my first post ever!",
+      "comments": []
+    },
+    {
+      "id": 301,
+      "authorId": 1684890054248,
+      "dateCreated": "02/02/2000",
+      "content": "My second post ever!",
+      "comments": []
+    },
+    {
+      "id": 300,
+      "authorId": 1684890054248,
+      "dateCreated": "01/01/1000",
+      "content": "This is my first post ever!",
+      "comments": []
+    },
+    {
+      "id": 301,
+      "authorId": 1684890054248,
+      "dateCreated": "02/02/2000",
+      "content": "My second post ever!",
+      "comments": []
+    },
+    {
+      "id": 300,
+      "authorId": 1684890054248,
+      "dateCreated": "01/01/1000",
+      "content": "This is my first post ever!",
+      "comments": []
+    },
+    {
+      "id": 301,
+      "authorId": 1684890054248,
+      "dateCreated": "02/02/2000",
+      "content": "My second post ever!",
+      "comments": []
+    }
   ]
 }

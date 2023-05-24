@@ -16,6 +16,6 @@ export class PostService {
 
   getPosts(authorId: number): Observable<Post[]> {
     let params = new HttpParams().set('authorId', authorId)
-    return this.http.get<any>(this.apiUrl, {params: params})
+    return this.http.get<any>(this.apiUrl, {params: params});
   }
 }
