@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { LoadingComponent } from './components/loading/loading.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SideBarModule } from './components/side-bar/side-bar.module';
 
 @NgModule({
   declarations: [AppComponent, LoadingComponent],
@@ -19,7 +20,8 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule, 
     ...AppStoreModule, 
     StoreDevtoolsModule.instrument({maxAge: 25}),
-    HttpClientModule
+    HttpClientModule,
+    SideBarModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthGuard],
   bootstrap: [AppComponent],
