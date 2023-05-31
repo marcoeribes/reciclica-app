@@ -1,0 +1,36 @@
+ion-content {
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+ion-item {
+    padding: 10px;
+    gap: 30px;
+    border-bottom:none;
+    border-color:transparent;
+    ion-label {
+        font-size: 20px;
+    }
+}
+
+ion-label{
+    font-size: 23px;
+    font-weight:bold;    
+}
+
+ion-icon {
+    margin-right: 20px;
+}
+
+ion-text{
+    font-size: 16px;
+    font-weight:bolder;    
+}
+
+.real-header {
+    height: 25%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

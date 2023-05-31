@@ -1,18 +1,32 @@
 <ion-menu side="start" menuId="first" contentId="main-content">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-content>
+    <div class="real-header">
+      <ion-avatar>
+        <img src="https://static.vecteezy.com/system/resources/previews/002/534/006/original/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg">
+      </ion-avatar>
+      <ion-label color="dark">Username</ion-label>
+      <ion-text color="medium">Email@email.com</ion-text>
+      <ion-text color="medium">Total transaction: 4</ion-text>
+    </div>
     <ion-list>
-      <ion-menu-toggle auto-hide="false">
-        <ion-item [routerDirection]="'root'">
-          <ion-label>
-            Wow
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
+      <ion-item class="item1" lines="none">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label color="dark">
+          Settings
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" (click)="logout()" id="logout">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label color="dark">
+          Logout
+        </ion-label>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
+
+<ion-alert
+  trigger="logout"
+  header="Confirm log out?"
+  [buttons]="alertButtons"
+></ion-alert>
